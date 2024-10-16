@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class SiakadWhile11 {
@@ -13,16 +12,20 @@ public class SiakadWhile11 {
 
         while (i <= jml) {
 
-            System.out.print("masukkan nilai mahasiswa ke- " + i + ": ");
+            System.out.print("Masukkan nilai mahasiswa ke-" + i + ": ");
             nilai = sc.nextInt();
 
+            // Cek validitas nilai
             if (nilai < 0 || nilai > 100) {
                 System.out.println("Nilai tidak valid. Masukkan lagi nilai yang valid!");
-                continue;
+                continue; // Kembali ke input tanpa menambah i
             }
 
+            // Pengecekan nilai dan pemberian grade
             if (nilai > 80 && nilai <= 100) {
                 System.out.println("Nilai mahasiswa ke-" + i + " adalah A");
+                // Menampilkan pesan tambahan jika mendapat nilai A
+                System.out.println("Bagus, pertahankan nilainya!");
             } else if (nilai > 73 && nilai <= 80) {
                 System.out.println("Nilai mahasiswa ke-" + i + " adalah B+");
             } else if (nilai > 65 && nilai <= 73) {
@@ -36,8 +39,9 @@ public class SiakadWhile11 {
             } else {
                 System.out.println("Nilai mahasiswa ke-" + i + " adalah E");
             }
-            i++;
+            i++; // Menambah penghitung setelah nilai diproses
         }
 
+        sc.close(); // Menutup scanner
     }
 }
